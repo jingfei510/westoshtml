@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+
+				background: palevioletred;
+				display: flex;
+				justify-content: center;
+			}
+
+			a:link {
+				text-decoration: none;
+			}
+
+			a:hover {
+				background: cadetblue;
+
+			}
+
+			a:active {
+				background: black;
+
+			}
+
+			#div1 {
+				width: 300px;
+				height: 400px;
+				float: left;
+				margin-top: 70px;
+				margin-left: 20px;
+				border: white 20px solid;
+				background-image: url(img/IMG_20180816_204139.jpg);
+				background-repeat: no-repeat;
+				background-size: 300px 400px;
+				overflow: hidden;
+				
+				transition: all 2s;
+			}
+
+			#div4 {
+				float: left;
+				margin-left: 50px;
+				margin-top: 60px;
+				font-family: 仿宋;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 30px;
+				text-align: center;
+
+			}
+
+			#div2 {
+				width: 300px;
+				height: 50px;
+
+				background-color: rgba(0, 0, 0, 0.1);
+				margin-top: 400px;
+
+				box-sizing: border-box;
+				padding: 10px;
+				transition: margin-top 1s;
+
+			}
+
+			#div1:hover #div2 {
+				margin-top: 350px;
+				transition: margin-top 1s;
+			}
+
+			#div1:hover {
+				transform: scale(1.2); 
+				background-image: url(img/c.jpg);
+				background-size: 110% 110%;
+				transition: all 3s;
+			}
+
+			#div2 span {
+
+				width: 100px;
+				height: 50px;
+
+				font-size: 20px;
+				font-family: 微软雅黑;
+				color: white;
+			}
+
+			#div3 {
+				position: absolute;
+				top: 600px;
+				left: 700px;
+				font-size: 20px;
+				background: #DB7093;
+			}
+
+
+			#shouye:hover {
+				overflow: visible;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="div1">
+			<div id="div2">
+				<span>爱学习爱JAVA</span>
+			</div>
+
+		</div>
+		<div id="div4">
+			<p>
+				<h3>将进酒</h3> 
+				<span style="margin-left: 100px;">（唐代李白）</span><br>
+				君不见，黄河之水天上来，奔流到海不复回。<br>
+				君不见，高堂明镜悲白发，朝如青丝暮成雪。<br>
+				人生得意须尽欢，莫使金樽空对月。<br>
+				天生我材必有用，千金散尽还复来。<br>
+				烹羊宰牛且为乐，会须一饮三百杯。<br>
+				岑夫子，丹丘生，将进酒，杯莫停。<br>
+				与君歌一曲，请君为我倾耳听。<br>
+				钟鼓馔玉不足贵，但愿长醉不复醒。<br>
+				古来圣贤皆寂寞，惟有饮者留其名。<br>
+				陈王昔时宴平乐，斗酒十千恣欢谑。<br>
+				主人何为言少钱，径须沽取对君酌。<br>
+				五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
+
+		</div>
+		<div id="div3">
+			<a href="xikai.html" style="color: white;">点击进入西开首页</a>
+		</div>
+
+	</body>
+</html>

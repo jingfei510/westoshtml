@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>>行业资讯</title>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/index2.css"/>
+</head>
+<body>
+<header>
+    <div class="header_left">
+        <img src="../images/logo.png" alt="西部开源技术中心"/>
+        <span>西部开源欢迎你！</span>
+    </div>
+    <div class="header_right">
+        <img src="../images/phone1.png" alt="电话"/>
+        <span>029-86699937&nbsp;&nbsp;88262419</span>
+    </div>
+</header>
+<div class="banner">
+    <ul class="banner_ul">
+        <li class="lilist1"><a href="../index.html">首页</a><span></span></li>
+        <li class="lilist"><a href="index2.html">课程中心</a><span></span>
+            <ul class="lilist_ul">
+                <li><a href="index2java.html">Java</a></li>
+                <li><a href="index2C.html">Linux&nbsp;C&C++</a></li>
+                <li><a href="index2linux.html">Linux</a></li>
+                <li><a href="index2.html">Web</a></li>
+            </ul>
+        </li>
+        <li class="lilist"><a href="index3.html">教育体系</a><span></span></li>
+        <li class="lilist"><a href="news.html">新闻资讯</a><span></span>
+            <ul class="lilist_ul lilist_ul1">
+                <li><a href="news.html">行业资讯</a></li>
+                <li><a href="news1.html">就业咨询</a></li>
+                <li><a href="news2.html">学生动态</a></li>
+            </ul>
+        </li>
+        <li class="lilist"><a href="xuexiziyuan.html">学习资源</a><span  class="show"></span></li>
+        <li class="lilist"><a href="linux01.html">Linux企业化</a><span class="span_last"></span>
+            <ul class="lilist_ul lilist_ul1 ul_width">
+                <li><a href="linux01.html">Linux企业化</a></li>
+                <li><a href="linux02.html">解决方案</a></li>
+                <li><a href="linux04.html">项目案例</a></li>
+            </ul>
+        </li>
+        <li class="lilist2"><input type="text" class="banner_txt" placeholder="搜索"/></li>
+    </ul>
+</div>
+<!--Linux企业化一-->
+<div class="bgli1-1">
+    <span class="fontcolor">您的位置 : </span><a href="news.html" class="bgli1-1_a">学习资源 </a>&gt; 技术文档
+
+    <h2 class="bgli1-1h2 maleft">前端碎片精编</h2>
+    <span class="datayear">2017-9-1&nbsp;&nbsp;12:00&nbsp;&nbsp;西部开源</span><span class="look">浏览:2000人</span>
+    <div class="bgli1-1_div">
+        <br/><br/>
+        <span class="bgli_divspan">一、语言基础</span><br/>
+        <p class="bgli_divp">
+            <b>箭头函数</b><br/>
+            es6 箭头函数不仅仅是简化了函数的写法（有可能很多人并不习惯这种简化），更重要的是，它绑定的是父作用域 <br/><br/>
+            <b>单位</b><br/>
+            问：android中有单位dp, ios中有单位pt, 对应到网页中什么情况下的什么单位？ <br/>
+            答：对应网页中设置 viewport = device-width 时候的 px 单位 <br/><br/>
+            <b>export default</b><br/>
+            高手都经常出错：<br/>
+            // exportFile   <br/>
+            export default { <br/>
+            a: 'a',<br/>
+            b: 'b'<br/>
+            }<br/>
+            //import File  <br/>
+            import { a } from 'exportFile'<br/>
+            上面的代码咋一看好像没啥问题，但是却报错了，问题的关键在于 default，使用 export default 导出的文件是不能使用 import {} 导入的，因为：<br/>
+            export default a 等效于 export {a as default} <br/>
+            import a from 'exportFile' 等效于 import {default as a} from 'exportFile'<br/>
+            再嵌入一层花括号，显然会出问题<br/><br/>
+            <b> Object.defineProperty</b><br/>
+            Object.defineProperty不是一个常用的方法，却是一个神奇的存在。顾名思义，这是一个为对象定义属性的方法，为对象定义属性可以使用obj.name或者obj[name]等简单的形式，何必defineProperty?要知道，简单方式只是使用一些默认设置调用了defineProperty而已，在一些高级的使用场景，例如vue为了实现数据绑定，重新定义了属性的get和set，data的变更总会调用get和set，这样data的变更总能得到监听，也就能及时的进行视图渲染，实现了双向绑定中数据跟视图的绑定
+        </p>
+        <span class="bgli_divspan">二、深入原理</span>
+        <p class="bgli_divp">
+            Vue 执行过程图<br/>
+            <b>长列表</b><br/>
+            无限上拉加载的长列表如果处理得不好，dom节点会无限增加，很容易就内存爆表了，后果就是卡顿，卡机。所以我们需要复用dom节点，如下图，iscroll就是一个例子 <br/>
+            <b>Weex & Rn</b> <br/>
+            vue和weex, react 和 react native 之间一个最主要的差别在于，前者虚拟dom diff 之后直接反应到浏览器真实的dom, 后者发送指令到android 或者 ios 的渲染引擎进行渲染<br/>
+            <b>Vuex & Redux</b><br/>
+            redux 使用纯函数管理状态变更，这样就可以通过 === 的方式比较状态的变更（否则对象深遍历比较开销太大），然而 vuex 并未如此。今天了解了下，vuex不光不要求使用纯函数，而且还不能使用纯函数，必须通过改写入参来改写状态，因为vuex是通过监听对象的set get方法来检测状态的变更的，这很 vue
+            <br/>
+            <b>Vue 子-父组件通信</b><br/>
+            vue 当中，子=>父 的通信的官方推荐做法是，父组件在使用子组件的时候通过 v-on 绑定一个事件，子组件在合适的时机通过 this.$emit 触发这个事件。这其实有点类似于直接通过给属性给子组件传递一个函数，然而，属性传函数有一个缺陷，作用域不是那么清晰，一不小心就弄错。<br/>
+            所以事件绑定的方式能够成为官方推荐的方法是有原因的<br/>
+        </p>
+        <span class="bgli_divspan">三、方法论</span>
+        <p class="bgli_divp">
+            忘记自己是一个专业前端 <br/>
+            我们学习框架不要止于会用，要深入原理（必要的时候阅读源码），这样才能触类旁通。学习前端不要把自己局限死，要忘记自己是一个专业前端，后台，native，应该知道的都别客气，因为视野很重要<br/>
+            <b>从设计者的角度看待问题</b><br/>
+            在学习某个知识某个框架的时候，如果你总是理解不了，总是看不透，不如站在设计者的眼光来看待，或者干脆假设自己来设计这个框架，我会怎么做。举个栗子，有个同学总是搞不清楚git里面的:add,commit,pull,push都是干什么的，虽然字面上都知道是增加到缓存、提交到本地，更新远程到本地，推送本地到远程;如果你是个设计者，首先，你必须清楚git作为代码管理工具，它最最重要的是要解决多人协作的问题以及版本管理，然后用屁股就会想到应该有一个远程的仓库（一个中心）让大家可以同步代码，同步代码就会涉及到代码提交，和代码更新，然后如果版本只在那个远程仓库维护的话，那么恭喜你，你设计了一个svn，然后你再去对比git的设计，增加了本地仓库的概念，也就是本地也会完整的进行版本管理。有了这些洗澡蹲坑都能进行的思考之后，这些个add,commit,pull,push的概念还会困扰你么，分支的概念同样可以攻克
+           <br/>
+            <b>读源码你需要debug</b><br/>
+            阅读一个框架的源码，例如vue的，目录文件繁多，一个细节一个细节慢慢去品，被吓退的不在少数。一个比较有效的办法，这一个demo，debug，单步执行，理清主脉络，了解各个文件目录大概是干嘛的，再读就没这么费劲了
+            <br/>
+            <b>深入原理为什么重要</b><br/>
+            为什么同样是工作一两年，有些人进步很大，有些人却停滞不前，绝不是因为前者加班太多哈。主要的原因是有些同学喜欢给自己设定边界，总在堆砌业务，到头来，你只是对某个框架更熟练而已，换一个框架，就不知所措。而有些同学，尝试去深入原理，去读源码，甚至觉得用得不爽改造框架，遇到问题的时候，确定了不是前端的问题，没有就此撒手不管，他们忘记他们是一个专业前端，后台，native端都是他们的领域。当然环境对一个人的影响很大，如果你在公司还是习惯堆砌代码，我希望你能在这个圈子开始改变
+            <br/>
+            <b>创造工具</b><br/>
+            可能大多数同学讨厌繁重、重复、没多大技术含量的工作；宁愿接手一些有难度需要攻坚但并不繁琐的，有成就感还容易出成绩。可现实的情况是，大多数时候我们只能接受前者，如何摆脱呢？多思考繁重、重复的工作内容可不可以通过写一个工具来完成，自然而然就转化到后者了（当然不一定能成功，且需要付出更多的精力），久而久之，攻坚的任务也就会顺理成章的找上你了
+            <br/>
+        </p><br/>
+        <span class="bgli_divspan">四、其它精彩</span>
+        <p class="bgli_divp">
+            <b>MV*</b><br/>
+            MVC、MVP、MVVM、MV 这些框架都有些什么区别？数据流向的差异，MVC，MVP 和 MVVM 的图示，
+            个人觉得这些概念都有些唬人，MV除了M和V，再随便加上一个X，不同的框架有不同的叫法。特别的，React 只属于这个 V
+            <br/>
+            <b>学习需要正向反馈</b><br/>
+            有时候坚持不了自己的学习，并不是说毅力不够，而是你没有在学习的过程中找到正向反馈。什么是正向反馈，写了一篇学习总结得到了哪怕一个赞，做了一个小效果可以在朋友圈装逼，或者完成了今天的学习任务之后奖励自己一根香蕉~~
+            <br/>
+        </p>
+        <p class="bgli_divp"><span class="text_cen">后话</span></p>
+        <p class="bgli_divp">
+            有一段时间没更新了，不是因为偷懒，而是账号被（mo ming qi miao）关停了，在这里还是衷心的像粉丝朋友们道一声抱歉~~~ <br/>
+            <br/>坚持和努力会一如既往，为了不跟大家走散：
+        </p>
+        <a href="jishu_3.html">上一页</a>
+        <a href="jishu_5.html" class="textright">下一页</a>
+    </div>
+
+</div>
+<!--footer-->
+<footer>
+    <div class="footer_div">
+        <ul class="footer_ulleft footer_ulleft1">
+            <li><span class="li_span">课程详解</span></li>
+            <li><a class="footer_a" href="index2C.html#hear">Linux&nbsp;C&C++</a></li>
+            <li><a class="footer_a" href="index2.html#hear">Web前端</a></li>
+            <li><a class="footer_a" href="index2java.html#hear">Java</a></li>
+            <li><a class="footer_a" href="index2linux.html#hear">系统运维</a></li>
+        </ul>
+        <ul class="footer_ulleft">
+            <li><span class="li_span">学习资源</span></li>
+            <li><a class="footer_a" href="jishu_1.html">技术文档</a></li>
+            <li><a class="footer_a" href="">问答库</a></li>
+        </ul>
+        <ul class="footer_ulleft">
+            <li><span class="li_span">关于我们</span></li>
+            <li><a class="footer_a" href="Company%20profile1.html">公司简介</a></li>
+            <li><a class="footer_a" href="join.html">招贤纳士</a></li>
+            <li><a class="footer_a" href="linux01.html">Linux企业化</a></li>
+        </ul>
+        <img src="../images/gongsi1.png" class="footer_erweima" alt="微信二维码"/>
+        <span class="foot_span">企业公众号</span>
+    </div>
+    <div class="footer_div1 clear">
+        <span class="footer_div1_span">友情链接:</span><a href="https://www.redhat.com/zh">https://www.redhat.com/zh&nbsp;&nbsp;&nbsp;红帽 </a>
+        <a class="footer_div1a" href="http://www.cjjjs.com/">http://www.cjjjs.com/  C++技术网</a>
+        <a class="footer_div1a" href="http://www.cctry.com/">http://www.cctry.com/  VC驿站</a><br/>
+        <a class="footer_div1a margin_left" href="http://www.pronginn.com/yunwei/">http://www.pronginn.com/yunwei/  程序员客栈</a>
+        <a class="footer_div1a" href="http://www.unixhot.com/">http://www.unixhot.com/  运维社区</a>
+        <p>西安源代码技术服务有限公司</p>
+        <p>地址：西安市太白南路181号西高新西部电子社区A座C区506室<span class="p_span">电话：029-86699937&nbsp;&nbsp;&nbsp;029-88262419</span></p>
+        <span class="foot_span1">版权所有：西安源代码软件技术有限公司&nbsp;&nbsp;陕ICP备07011438</span>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+*{margin: 0;padding: 0;}
+html,body{font-family: "微软雅黑";overflow-x: hidden}
+li{list-style: none}
+a{text-decoration: none;outline: none}
+/*头部*/
+header{height: 95px;width: 960px;margin: 0 auto;line-height:90px}
+.header_left{float: left;}
+.header_left>img{width: 100px}
+.header_left>img,.header_right>img{vertical-align: middle;}
+.header_right>img{width: 40px}
+.header_left>span,.header_right>span{vertical-align: middle;font-size: 26px;color: #323232;margin-left:10px}
+.header_right{float: right;}
+.header_right>span{font-size: 20px}
+/*banner*/
+.banner{width: 100%;height: 70px;background:#3e89fc;line-height: 70px}
+.banner_ul,.Web{width: 960px;margin: 0 auto;height: auto}
+.banner_ul>li{float: left;position: relative;}
+.lilist1>span{border-bottom: 10px solid white;border-left: 10px solid transparent;border-right: 10px solid transparent;position: absolute;bottom: 0;left: 8px;display: none}
+.lilist1{padding: 0 40px 0 0;}
+.lilist1:hover >span,.lilist:hover>span{display: block}
+.lilist{padding: 0 20px;position: relative;}
+.lilist>span{border-bottom: 10px solid white;border-left: 10px solid transparent;border-right: 10px solid transparent;position: absolute;bottom: 0;left:45px;display: none}
+.lilist2{margin-left: 40px}
+.lilist>span.span_last{left:60px }
+.banner_ul>li>a{color: #fff;font-size: 18px;display: block;outline: none}
+.banner_txt{width: 210px;height:20px;border-radius: 8px;padding: 5px}
+.banner_ul>li>span.show{display: block}
+.lilist_ul{transition:all 0.5s linear;height:0;width: 110px;background: rgba(0, 0, 0, 0.53);position: absolute;z-index: 444;left:0px;text-align: center;}
+.lilist:hover .lilist_ul{height:200px}
+.lilist:hover .lilist_ul1{height: 150px}
+.ul_width{width: 130px;left: 10px}
+.lilist_ul>li{height: 50px;line-height: 50px;display: none}
+.lilist_ul>li>a{color: transparent;transition: all 2s linear;display: block;width: 100%}
+.lilist:hover .lilist_ul>li>a{color: white}
+.lilist:hover .lilist_ul>li{display: block}
+.lilist_ul>li:hover{background: #63b2ff;cursor: pointer}
+/*轮播图*/
+.navbg{width: 100%; height:500px;padding-top: 2px;position: relative;z-index: 1;}
+.navbg>img{width: 100%;height: 100%}
+.img_list {transition: all 2s linear;position: absolute;width: 100%;height: 100%;}
+.span_left {position: absolute;z-index: 999;display: block;width: 50px;line-height: 120px;font-size: 4em;color:#D0E1FD;text-align: center;left: 0;top: 180px;background-color: rgba(255,255,255,0.2);}
+.span_left:hover {background-color: #63b2ff;}
+.span_right {position: absolute;text-align: center;right: 0;z-index: 999;display: block;width: 50px;line-height: 120px;font-size: 4em;color: #D0E1FD;top: 180px;background-color: rgba(255,255,255,0.2);}
+.span_right:hover {background-color: #63b2ff;}
+.dian {position: absolute;bottom: 20px;margin-left:45%;width: 180px;z-index: 9999;}
+.div_dian {width: 20px;height: 20px;float: left;margin-left: 10px;border-radius: 100%;background-color:#D6D8D7;}
+
+/*固定*/
+.fixed{width: 220px;height: 500px;background: rgba(224, 224, 224, 0.53);
+    display: none;position: fixed;top:100px;z-index: 9999;white-space: nowrap}
+.fixed img{vertical-align: middle}
+.fixed a{color: white;font-size:25px;}
+.qianjing,.banxing,.jiuye,.zaixian,.mianfei{width: 180px;height: 75px;line-height: 75px;margin: 20px auto;border-radius: 1px 15px 1px 15px;vertical-align: middle}
+.qianjing{background: #7388db}
+.banxing{background:#a88aeb}
+.jiuye{background:#a8d789}
+.zaixian{background:#c6b25a}
+.mianfei{background:#ce8efe}
+.qianjing>img{margin-left: 6px}
+/*就业喜报*/  
+.xibao{width: 100%;height: 80px;background:#686c8e;margin-top: -4px}
+.jiuyexibao{width: 830px;margin:0 auto;}
+.icon_laba{margin-right: 20px}
+.xibaoleft>a{color:white;font-size: 26px;}
+.xibaoleft>a>span{display: inline-block;vertical-align:-8px}
+/*四个*/
+.bgfour{width: 100%;background: #ffffff;}
+.four,.kc{width: 900px;margin: 0 auto;}
+.four_one{float: left;color:white;font-size: 17px;width: 420px;background: #7388db;margin-left: 15px;text-align: center;padding-top: 10px;padding-bottom: 20px}
+.four_p{margin-top: 10px;margin-bottom: 15px}
+.four_pp{width: 420px ;height: 40px;line-height: 40px;text-align:center;display: table-cell}
+.four_pp>span{height: 30px;display:inline-block;margin:0 10px;width: 40px;border: 1px solid white;vertical-align: middle;}
+.four_two{float: left;color:white;font-size: 17px;width: 420px;background: #a88aeb;margin-left: 15px;text-align: center;padding-top: 10px;padding-bottom: 20px}
+.four_three{float: left;color:white;font-size: 17px;width: 420px;background: #c6b25a;margin-left: 15px;text-align: center;padding-top: 10px;padding-bottom: 20px;margin-top: 15px}
+.four_four{float: left;color:white;font-size: 17px;width: 420px;background: #a8d789;margin-left: 15px;text-align: center;padding-top: 10px;padding-bottom: 20px;margin-top: 15px}
+.bgfour h1{color: white;border-bottom: 2px dashed black}
+.question{padding-left: 10px}
+.q_top{vertical-align: middle;font-size: 20px;padding-top: 15px}
+.q_top>img{margin-right: 15px}
+.q_ul{width: 100%;overflow: hidden}
+.q_ul>li{float: left;width: 31%;text-align: center;height: 70px;line-height:70px}
+.q_ul>li>a{color: white;font-size: 17px}
+.q_li1{background: #a8d789;}
+.q_li2{background: #a88aeb;margin-left:15px;}
+.q_li3{background: #ce8efe;margin-left:15px;}
+
+@keyframes pao {
+    0%{transform: translateX(-1000px);opacity: 0}
+    100%{transform: translateX(0);opacity: 1}
+}
+@keyframes pao1 {
+    0%{transform: translateX(1000px);opacity: 0}
+    100%{transform: translateX(0);opacity: 1}
+}
+/*课程中心*/
+.kechengbg{margin-top:15px;width: 100%;height: 1080px;background: url("../images/bei.jpg") no-repeat;background-size:100% 100%}
+.kechengbg img{transition: all 0.5s linear}
+.kechengbg img:hover{transform: rotateZ(360deg)}
+.web_ul img{transition: all 0.5s linear}
+.web_ul img:hover{transform: rotateZ(360deg)}
+.kc,.jiuyeqianjing,.tixi,.qiye{padding-top: 30px;width: 880px;vertical-align: middle}
+.ke{font-size: 28px;margin: 30px  20px 0 20px;}
+.kc_span{width: 355px;background: #e3e3e3;height: 2px;display:inline-block;vertical-align: middle}
+.ke_1{overflow: hidden;margin-top: 30px}
+.ke_1zuo>img{margin-top: 20px;width: 120px}
+.ke_2zuo>img{margin-top: 40px;width: 130px}
+.ke_3zuo>img,.ke_4zuo>img{margin-top: 30px}
+.ke_1zuo,.ke_2zuo,.ke_3zuo,.ke_4zuo,.webzuo{float:left;width: 168px;height:220px;text-align: center}
+.ke_1zuo{background: rgba(168, 215, 137, 0.73);}
+.ke_2zuo{background: rgba(164, 132, 255, 0.73);}
+.ke_3zuo{background: rgba(198, 178, 90, 0.73);}
+.ke_4zuo{background: rgba(115, 136, 219, 0.73);}
+.ke_1zuo>p,.ke_2zuo>p,.ke_3zuo>p,.ke_4zuo>p{color: white;font-size: 20px}
+.ke_2zuo>p{margin-top: 20px}
+.ke_3zuo>p,.ke_4zuo>p{margin-top: 15px}
+.ke_ul>li{float: left;width: 166px;height: 220px;background: rgba(255, 255, 255, 0.65);text-align: center;border-right: 1px solid #7d7d7d}
+.ke_ul>li.noborder{border: none}
+.ke_ul>li>a>img{margin-top: 25px;}
+.ke_ul>li>a>p{color:#333333;margin-top: 30px }
+.ke_li{margin-left: 25px;}
+.ke_li img{transition: all 0.5s linear}
+.ke_2{margin-top: 20px}
+/*就业前景*/
+.zhexian:hover,.bingtu:hover,.xinzibaochou:hover{transform: scale(1.3);z-index: 999;border: 2px solid  #3e89fc}
+.jiuyeqianjing,.tixi,.qiye{margin: 0 auto}
+.jiu_img{width: 600px;margin: 0 auto;display: block;margin-top: 10px}
+.zhexian,.xinzibaochou{width: 300px;transition: all 1s linear}
+.bingtu{width: 250px;transition: all 1s linear}
+.xuesheng{width: 860px}
+.xueyuan{position: relative;}
+.xue_span{width: 860px;height: 40px;background: rgba(0, 0, 0, 0.64);display: block;position: absolute;bottom:138px;color: white;line-height: 40px;text-align: center}
+.stroy{background: #3e89fc;width: 860px;height: 140px;margin-top: -5px;}
+.stroy>p{color: white}
+.p1{font-size: 25px;padding-top: 20px;margin-left: 20px}
+.p2{margin-top: 20px;margin-left: 60px}
+/*体系*/
+.tixi{overflow: hidden}
+.ti_1{margin-top:20px;position:relative;width: 420px;height: 270px;background:url("../images/dianbg.png");background-size: 100%;float: left;}
+.ti_2{margin-top:20px;position:relative;margin-left: 20px;width: 420px;height: 270px;background:url("../images/jiaoxue1.png");background-size: 100%;float: left;}
+.mengban{width: 420px;height: 270px;background: rgba(0, 0, 0, 0.53);position: absolute}
+.ti_1>p,.ti_2>p{text-align:justify;font-size:14px;color: white;z-index: 999;position: absolute;width: 300px;left: 60px;top:60px;line-height: 30px}
+.btn1{transition:all 0.5s linear;display: block;color: white;width: 200px;height: 50px;position: absolute;left: 100px;border: 2px solid white;bottom: 30px;text-align: center;line-height: 50px}
+.ti_2>p{font-size:14px;color: white;z-index: 999;position: absolute;width: 200px;left: 150px;top:60px;line-height: 30px}
+.man2{position: absolute;width: 120px;top:20px;left: 20px}
+.ti_2>.btn1{left:150px }
+.btn1:hover{background: #3e89fc;border: none}
+/*企业部分*/
+.qiye{padding-top: 30px;padding-bottom: 20px}
+.qi_span{margin-top:20px;border: 1px solid #333333;display:inline-block;width: 190px;height: 90px;line-height: 80px;text-align: center}
+.qi_span>img{width: 80%;margin-top: 20px;transition: all 0.2s linear}
+.qi_span>img:hover{transform: rotateZ(10deg)}
+.q{width: 190px;height: 53px}
+.ma{margin-left:25px}
+/*底部*/
+footer{width: 100%;background: #3e89fc;overflow: hidden;padding-bottom: 50px}
+.footer_div{width: 900px;margin: 0 auto;overflow:hidden;position: relative;padding-bottom: 80px;border-bottom: 1px solid white}
+.footer_ulleft{margin-left:45px;float: left;margin-top: 50px}
+.footer_a{color: white;line-height: 30px}
+.footer_a:hover{color: #323232}
+.li_span{color:white;font-weight: bold;font-size: 18px;display:block;margin-bottom: 30px}
+.footer_erweima{margin-left:200px;margin-top: 30px}
+.foot_span{color: white;position: absolute;right: 100px; bottom: 30px;}
+.footer_div1{width: 1200px;margin: 0 auto;color: white;padding-top: 20px}
+.footer_div1_span{margin-left: 200px}
+.footer_div1>a{color: #d7d7d7;line-height: 30px}
+.footer_div1>a:hover{color: #636363;}
+.clear{clear: both}
+.footer_div1a{margin-left: 20px}
+.margin_left{margin-left: 200px}
+.footer_div1>p{color: white;margin-left: 200px;line-height:35px}
+.p_span{margin-left: 150px}
+.foot_span1{text-align:center ;display: block;margin-top: 30px}

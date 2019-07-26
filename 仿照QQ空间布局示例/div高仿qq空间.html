@@ -1,0 +1,978 @@
+<html>
+	<head>
+		<title>秋明本的空间</title>
+
+	<style type="text/css">
+		
+		body{
+			background-image:url(image/5.jpg);
+			background-repeat:no-repeat;
+			width:100%;
+			height:100%;
+			background-size:100% 100%;
+			}
+		/*边框线*/
+		.Down1{
+			height:900px;
+			border:0px black solid;
+			  }
+		/*导航栏字体*/
+		.dh{
+			font-family:微软雅黑;
+		    font-size:15;
+		    width:12%;
+		    float:left;
+			list-style:none;
+			text-align:center;
+			line-height:30px;
+		   }
+		/*导航栏标签属性*/
+		.lj{
+			text-decoration:none;
+			color:#000000;
+		   }
+		/*第一行名字秋明本*/
+		#FirstName{
+			width:19%;
+			height:55px;
+			margin-left:1%;
+			margin-top:10px;
+			font-size:30;
+			font-family:微软雅黑;
+			text-align:left;
+			line-height:60px;
+			color:#006666;
+				  }
+		/*个性签名*/
+		#SecondText{
+			width:19%;
+			height:30px;
+			margin-left:1%;
+			text-align:left;
+			font-family:微软雅黑;
+			color:#006666;
+				   }
+		/*悬浮栏*/ 
+		#TopHover{
+			width:100%;
+			height:40px;
+			margin-top:-7px;
+				 }
+		/*第一行标题栏*/
+		#TopName{
+			width:65%;
+			height:100px;
+			margin-left:17.5%;
+				}
+		/*标题*/
+		#bt{
+		    width:65%;
+		    height:170px;
+		    margin-left:17.5%;
+		   }
+		/*头像框*/
+		#HeadPhoto{
+		    width:12%;
+		    height:165px;
+		    margin-left:1%;
+			margin-top:0px;
+			float:left;
+				 }
+		/*头像*/
+		#TopHeadPhoto{
+			width:100%;
+			height:120px;
+			background-image:url(image/1.jpg);
+			background-repeat:no-repeat;
+			background-position:50% 50%;
+			background-size:96% 96%;
+			background-color:#ffffff;
+			border-radius:3%;
+			border:1px #ccccff solid;
+					 }
+		/*修改头像*/
+		#FixHeadPhoto{
+			width:100%;
+			height:25px;
+			margin-top:120px;
+			background-color:#000000;
+			display:none;
+			color:#ffffff;
+			font-size:10;
+			text-align:center;
+			line-height:25px;
+					 }
+		#TopHeadPhoto:hover #FixHeadPhoto{
+			width:100%;
+			height:25px;
+			margin-top:95px;
+			background-color:#000000;
+			opacity:0.5;
+			display:block;
+			color:#ffffff;
+			font-size:10;
+			text-align:center;
+			line-height:25px;
+										 }
+		#FixHP{
+			width:100%;
+			height:46px;
+			margin-left:1%;
+			margin-top:0px;
+			background:#000000;
+			opacity:0.5;
+			display:none;
+			  }
+		/*秋明本2*/
+		#Name2{
+			width:10%;
+		    height:40px;
+			margin-left:1%;
+		    margin-top:15px;
+			float:left;
+			font-size:25;
+			font-family:微软雅黑;
+			color:#006666;
+			  }
+		/*成长值*/
+		#cz{
+			width:36%;
+		    height:55px;
+			margin-left:-10.2%;
+		    margin-top:66px;
+			float:left;
+		   }
+		/*成长值左*/
+		#CzLeft{
+			width:15%;
+			height:55px;
+			float:left;
+			   }
+		/*成长值中上*/
+		#CzCenterTop{
+			width:60%;
+			height:25.25px;
+			float:left;
+			margin-top:1px;
+			font-family:微软雅黑;
+			font-size:13;
+			line-height:35px;
+			color:#006666;
+					}
+		/*成长值中下*/
+		#CzCenterDown{
+			width:60%;
+			height:25.25px;
+			float:left;
+					 }
+		/*成长值右*/
+		#CzRight{
+			width:23.5%;
+			height:28px;
+			float:right;
+			margin-top:-15px;
+			border:1px #990033 solid;
+			border-radius:6%;
+			background-color:#ffcc00;
+			color:#990033;
+			font-family:微软雅黑;
+			font-size:15;
+			text-align:center;
+			line-height:27px;
+				}
+		/*天气*/
+		#Weather{
+			width:17%;
+		    height:55px;
+			margin-right:2%;
+		    margin-top:66px;
+			float:right;	
+				}
+		/*天气栏左*/
+		#WeatherLeft{
+			width:35%;
+		    height:55px;
+			background-image:url(image/8.png);
+			background-position:50% 50%;
+			background-repeat:no-repeat;
+			float:left;
+					}
+		/*天气栏中*/
+		#WeatherCenter{
+			width:25%;
+			height:55px;
+			float:left;
+			font-size:43;
+			text-align:center;
+			line-height:58px;
+			float:left;
+			color:#006666;
+					  }
+		/*天气栏右上*/
+		#WeatherRight1{
+			width:40%;
+			height:32px;
+			float:right;
+			font-size:17;
+			font-family:微软雅黑;
+			line-height:40px;
+			color:#006666;
+					  }
+		/*天气栏右下*/
+		#WeatherRight2{
+			width:40%;
+			height:22px;
+			float:right;
+			font-size:12;
+			font-family:微软雅黑;
+			text-align:center;
+			color:#006666;
+					  }
+		/*导航栏*/
+		#Menu{
+			width:58%;
+		    height:30px;
+			margin-left:1%;
+			margin-top:11px;
+			float:left; 
+			 }
+		/*下半页左*/
+		#DownLeft{
+		    width:13%;		   
+		    margin-left:17.5%;
+		    float:left;
+				 }
+		/*下半页左上*/
+		#DownLeftTop{
+			width:96%;		   
+		    height:280px;
+			margin-left:2%;
+			border:1.5px #0099cc solid;
+			border-radius:1.5%;
+			background-color:#ffffff;
+		    float:left;	
+					}
+		/*下半页左上列表*/
+		.LeftTopList{
+			font-family:微软雅黑;
+		    font-size:14;
+			line-height:40px;
+			list-style:none;
+					}
+		.LeftTopList:hover{
+			background-color:#b6fcfc;
+						  }
+		/*下半页左上列表中*/
+		#DownLeftCenter{
+			width:96%;		   
+		    height:600px;
+			margin-left:2%;
+			margin-top:10px;
+			font-family:微软雅黑;
+			border:1.5px #0099cc solid;
+			border-radius:1.5%;
+			background-color:#ffffff;
+		    float:left;	
+					   }
+		/*下半页左列表图属性*/
+		.LeftImg{
+			margin-left:10%;	
+				}
+		/*下半页中*/
+		#DownCenter{
+		    width:32.5%;		   
+		    float:left;
+				   }
+		/*下半页中发表说说*/
+		#DownCenterTop{
+			width:98%;
+			height:70px;
+			margin-left:1%;
+			border:1.5px #0099cc solid;
+					  }
+		/*说说左*/
+		input{
+			width:70%;
+			height:70px;
+			float:left;
+			 }
+		/*说说右*/
+		#DownCenterTopDiv{
+			width:10%;
+			height:70px;
+			float:right;
+			background:#a5a5a5;
+						  }
+		#DownCenterTopDiv:hover{
+			width:10%;
+			height:70px;
+			float:right;
+			background:#009999;
+						  }
+		/*上传图*/
+		.CenterImg{
+			width:100%;
+			height:100%;
+				  }
+		/*动态头*/
+		#DTT{
+			width:98%;
+			height:38px;
+			margin-left:1%;
+			margin-top:5px;
+			background-color:#e6fcfd;
+			font-family:黑体;
+			font-size:13;
+			line-height:38px;
+			border:1.5px #0099cc solid;
+			border-radius:1.5%;
+			}
+		/*全部动态*/
+		#QBDT{
+			width:17%;
+			height:38px;
+			float:right;
+			 }
+		/*动态1*/
+		#DT1{
+			width:98%;
+			height:390px;
+			margin-left:1%;	
+			border:1.5px #0099cc solid;
+			border-radius:1%;
+			background-color:#ffffff;
+			}
+		#DT01{
+			width:10.5%;
+			height:50px;
+			margin-top:5px;
+			margin-left:1%;
+			border-radius:5%;
+			background-image:url(image/37.jpg);
+			background-size:100% 100%;
+			float:left;
+			}
+		#DT02{
+			width:10.5%;
+			height:20px;
+			margin-top:7px;
+			margin-left:14%;
+			font-size:14;
+			font-family:黑体;
+			line-height:25px;
+			}
+		#DT03{
+			width:50%;
+			height:20px;
+			margin-top:5px;
+			margin-left:14%;
+			font-size:12;
+			font-family:黑体;
+			line-height:20px;
+			color:#716d76;
+			}
+		#DT04{
+			width:98%;
+			height:25px;
+			margin-top:5px;
+			margin-left:1%;
+			 }
+		#DT05{
+			width:98%;
+			height:210px;
+			margin-left:1%;
+			 }
+		/*转发*/
+		#Talk{
+			width:98%;
+			height:30px;
+			margin-left:1%;
+			margin-top:1px;
+			background-color:#e6fcfd;
+			 }
+		/*赞*/
+		#ZF{
+			width:98%;
+			height:30px;
+			margin-left:1%;
+			background-color:#e6fcfd;
+		   }
+		.PL{
+			list-style:none;
+			color:#006666;
+			float:left;
+			margin-right:5%;
+			line-height:28px;
+			margin-top:1px;
+		   }
+		/*评论*/
+		#TalkText{
+			width:98%;
+			margin-left:1%;
+			height:33px;
+			background-color:#e6fcfd;
+				 }
+		#SSPL{
+			width:75%;
+			height:26px;
+			margin-top:4px;
+			margin-left:1%;
+			border:1.5px #0099cc solid;
+			 }
+		.DZTU{
+			width:30px;
+			height:30px;
+			float:left;
+			padding-left:2%;
+			 }
+		/*动态2*/
+		#DT2{
+			width:98%;
+			height:390px;
+			margin-left:1%;	
+			margin-top:5px;
+			border:1.5px #0099cc solid;
+			border-radius:1%;
+			background-color:#ffffff;
+			}
+		#DT010{
+			width:10.5%;
+			height:50px;
+			margin-top:5px;
+			margin-left:1%;
+			border-radius:5%;
+			background-image:url(image/1.jpg);
+			background-size:100% 100%;
+			float:left;
+			}
+		#Talk1{
+			width:100%;
+			height:25px;
+			margin-top:5px;
+			background-color:#e6fcfd;
+			 }
+		/*下半页右*/
+		#DownRight{
+		    width:19.3%;		  
+		    float:left;
+				  }
+		/*下半页右上*/
+		#DownRightTop{
+			width:96%;
+			height:70px;
+			margin-left:2%;
+			border-radius:1.5%;
+			border:1.5px #0099cc solid;
+					 }
+		/*周*/
+		#Week{
+			width:30%;
+			height:70px;
+			float:left;
+			 }
+		/*周左上*/
+		#WeekTop{
+			width:100%;
+			height:35px;
+			font-size:18;
+			font-family:黑体;
+			text-align:center;
+			line-height:50px;
+			background-color:#b6fcfc;
+			color:#006666;
+				}
+		/*周左下*/
+		#WeekDown{
+			width:100%;
+			height:35px;
+			font-family:黑体;
+			text-align:center;
+			line-height:20px;
+			background-color:#b6fcfc;
+			color:#006666;
+				 }
+		/*周中*/
+		#WeekCenter{
+			width:40%;
+			height:70px;
+			font-size:38px;
+			font-family:黑体;
+			text-align:right;
+			line-height:72px;
+			background-color:#ffffff;
+			color:#006666;
+			float:left;
+				   }
+		/*周右上*/
+		#WeekRight1{
+			width:30%;
+			height:35px;
+			float:right;
+			font-family:黑体;
+			font-size:30px;
+			text-align:center;
+			line-height:50px;
+			color:#006666;
+			background-color:#ffffff;
+				  }
+		/*周右下*/
+		#WeekRight2{
+			width:30%;
+			height:35px;
+			float:right;
+			font-family:黑体;
+			font-size:15px;
+			text-align:center;
+			line-height:30px;
+			color:#006666;
+			background-color:#ffffff;
+				   }
+		/*广告*/
+		#GG{
+			width:96%;
+			height:160px;
+			margin-left:2%;
+			margin-top:5px;
+			background-color:#ffffff;
+			background-image:url(image/48.jpg);
+			background-size:96% 96%;
+			border-radius:1.5%;
+			border:1.5px #0099cc solid;
+		   }
+		/*谁看过我*/
+		#CareMe{
+			width:96%;
+			height:400px;
+			margin-left:2%;
+			margin-top:5px;
+			background-color:#ffffff;
+			border-radius:1.5%;
+			border:1.5px #0099cc solid;
+			   }
+		/*谁看过我1*/
+		#CareMe1{
+			width:96%;
+			height:20px;
+			margin-left:2%;
+			margin-top:5px;
+			list-style:none;
+				 }
+		.Lookme{
+			float:left;
+			line-height:20px;
+			font-family:微软雅黑;
+			font-size:13;
+			padding-left:2%;
+			line-height:25px;
+			   }
+		/*关注什么*/
+		#Care{
+			width:96%;
+			height:70px;
+			margin-left:2%;
+			margin-top:5px;
+			font-family:微软雅黑;
+			font-size:14;
+			line-height:20px;
+			background-color:#e6fcfd;
+			padding-left:2%;
+			 }
+		/*开通黄钻*/
+		#KTHZ{
+			width:30%;
+			height:20px;
+			margin-left:3%;
+			margin-top:3px; 
+			border:1px #990033 solid;
+			border-radius:6%;
+			background-color:#ffcc00;
+			color:#990033;
+			font-family:微软雅黑;
+			font-size:15;
+			text-align:center;
+			line-height:20px;
+			 }
+		/*看过我的人*/
+
+		#Lookman{
+			width:96%;
+			height:285px;
+			margin-top:5px;
+			margin-left:2%;
+				}
+		/*看过的人头像*/
+		#ManPhoto1{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/49.png);
+			background-size:100% 100%;
+			background-color:#ff9999;
+				  }
+		#ManPhoto2{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/50.png);
+			background-size:100% 100%;
+				  }
+		#ManPhoto3{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/51.jpg);
+			background-size:100% 100%;
+				  }
+		#ManPhoto4{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/52.jpg);
+			background-size:100% 100%;
+				  }
+		#ManPhoto5{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/53.png);
+			background-size:100% 100%;
+				  }
+		#ManPhoto6{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/54.png);
+			background-size:100% 100%;
+				  }
+		#ManPhoto7{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/55.jpg);
+			background-size:100% 100%;
+				  }
+		#ManPhoto8{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/56.png);
+			background-size:100% 100%;
+				  }
+		#ManPhoto9{
+			width:32%;
+			height:75px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			background-image:url(image/57.png);
+			background-size:100% 100%;
+				  }
+		#ManPhotoName{
+			width:100%;
+			height:22px;
+			background-color:#000000;
+			margin-top:53px;
+			opacity:0.5;
+			font-size:12;
+			font-family:微软雅黑;
+			text-align:center;
+			line-height:25px;
+			color:#ffffff;
+			}
+		/*名字框*/
+		#ManName{
+			width:32%;
+			height:22px;
+			border:0px;
+			margin-left:1%;
+			float:left;
+			font-size:12;
+			font-family:微软雅黑;
+			text-align:center;
+			line-height:25px;
+				}
+		/*作者*/
+		#zz{
+		    width:65%;
+		    height:40px;		   
+		    margin-left:17.5%;
+		   }
+
+	</style>
+	
+	</head>
+
+	<body>
+		
+	<!-- 悬浮栏 -->
+		<div class="Down1" id="TopHover"></div>
+
+	<!-- 第一行标题栏 -->
+		<div class="Down1" id="TopName">
+			<div class="Down1" id="FirstName">秋明本</div>
+			<div class="Down1" id="SecondText">I walk like a shadow.</div>
+		</div>
+		
+	<!-- 标题行 -->
+		<div class="Down1" id="bt">
+			<!-- 头像 -->
+			<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="HeadPhoto">
+				<div class="Down1" id="TopHeadPhoto">
+					<!-- 修改头像 -->
+					<div class="Down1" id="FixHeadPhoto">修改头像</div>
+				</div>
+				<div class="Down1" id="FixHP"></div>
+			</div></a>
+			
+			<!-- 秋明本2 -->
+			<div class="Down1" id="Name2">秋明本</div>
+			<!-- 成长值 -->
+			<div class="Down1" id="cz">
+				<!-- 成长值左 -->
+				<div class="Down1" id="CzLeft">
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/7.png" style="width:80%;height:80%;"></img></a>
+				</div>
+				<!-- 成长值中上 -->
+				<div class="Down1" id="CzCenterTop">成长值1成长速度-10点/天</div>
+				<!-- 成长值中下 -->
+				<div class="Down1" id="CzCenterDown">
+					<img src="image/9.png" style="width:97%;height:60%;margin-top:3px;"></img>
+				</div>
+				<!-- 成长值右 -->
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="CzRight">续费黄钻</div></a>
+			</div>
+			<!-- 天气 -->
+			<div class="Down1" id="Weather">
+				<!-- 天气栏左 -->
+				<div class="Down1" id="WeatherLeft"></div>
+				<!-- 天气栏中 -->
+				<div class="Down1" id="WeatherCenter">15</div>
+				<!-- 天气栏右上 -->
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="WeatherRight1">°西安</div></a>
+				<!-- 天气栏右下 -->
+				<div class="Down1" id="WeatherRight2">11月14日</div>
+			</div>
+			<!-- 导航栏 -->
+			<div class="Down1" id="Menu">
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">主页</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">日志</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">相册</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">留言板</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">说说</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">个人档</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">音乐</a></li>
+				<li class="dh"><a class="lj" href="http://user.qzone.qq.com/759545502/main">更多</a></li>
+			</div>
+		</div>
+
+	<!-- 下半页左 -->
+		<div class="Down1" id="DownLeft">
+		<!-- 下半页左上 -->
+			<div class="Down1" id="DownLeftTop">
+			<!-- 下半页左上列表 -->
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/10.png" class="LeftImg" align="center"/>&nbsp;好友动态</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/11.png" class="LeftImg" align="center"/>&nbsp;特别关心</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/12.png" class="LeftImg" align="center"/>&nbsp;与我相关<img src="image/17.png" style="float:right;margin-top:9px;"/></a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/13.png" class="LeftImg" align="center"/>&nbsp;直播广场</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/14.png" class="LeftImg" align="center"/>&nbsp;那年今日</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/15.png" class="LeftImg" align="center"/>&nbsp;游戏应用</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/16.png" class="LeftImg" align="center"/>&nbsp;我的收藏</a></li>
+			</div>
+			<div></div>
+			<!-- 下半页左中列表1 -->
+			<div class="Down1" id="DownLeftCenter">
+				<li class="LeftTopList"><a class="lj" href="http://cf.qq.com/cp/a20161024sqjh/yellow.shtml"><img src="image/29.png" class="LeftImg" align="center"/>&nbsp;CF黄钻特权</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/myhome/1103490532?via=QZ.MYAPP"><img src="image/19.png" class="LeftImg" align="center"/>&nbsp;仙魂</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/100715380?appid=100715380&uin=759545502&pfid=2&qz_ver=8&appcanvas=0&qz_style=1&params=&entertime=1479226733642&canvastype=home&via=QZ.MYAPP&cdn_use_https=1&detail=&sendSetupFeeds=0&app_custom=&app_isfirst=1"><img src="image/20.png" class="LeftImg" align="center"/>&nbsp;焚天之怒</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/21.png" class="LeftImg" align="center"/>&nbsp;礼物</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/22.png" class="LeftImg" align="center"/>&nbsp;青云志</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/23.png" class="LeftImg" align="center"/>&nbsp;盗墓笔记</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/24.png" class="LeftImg" align="center"/>&nbsp;蛇蛇争霸</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/25.png" class="LeftImg" align="center"/>&nbsp;投票</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/26.png" class="LeftImg" align="center"/>&nbsp;QQ情侣</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/27.png" class="LeftImg" align="center"/>&nbsp;QQ牧场</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/28.png" class="LeftImg" align="center"/>&nbsp;文件夹</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/30.png" class="LeftImg" align="center"/>&nbsp;积分商城</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main"><img src="image/31.png" class="LeftImg" align="center"/>&nbsp;每日抽奖</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main" href="http://user.qzone.qq.com/759545502/main"><img src="image/32.png" class="LeftImg" align="center"/>&nbsp;更多游戏应用</a></li>
+				<li class="LeftTopList"><a class="lj" href="http://user.qzone.qq.com/759545502/main" href="http://user.qzone.qq.com/759545502/main"><img src="image/33.png" class="LeftImg" align="center"/>&nbsp;热血三国</a></li>
+			</div>
+		</div>
+
+	<!-- 下半页中 -->
+		<div class="Down1" id="DownCenter">
+		<!-- 发表说说 -->
+			<div class="Down1" id="DownCenterTop">
+				<input type="text"></input>
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="DownCenterTopDiv"><img src="image/36.png" class="CenterImg"></img></div></a>
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="DownCenterTopDiv"><img src="image/35.png" class="CenterImg"></img></div></a>
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="DownCenterTopDiv"><img src="image/34.png" class="CenterImg"></img></div></a>
+			</div>
+			<!-- 好友动态 -->
+			<div class="Down1" id="DTT">&nbsp;&nbsp;全部动态
+				<div class="Down1" id="QBDT"></div>
+			</div>
+			<!-- 动态1 -->
+			<div class="Down1" id="DT1">
+				<div class="Down1" id="DT01"></div>
+				<div class="Down1" id="DT02">石玥</div>
+				<div class="Down1" id="DT03">昨天 23:09<img></img>浏览(39)</div>
+				<div class="Down1" id="DT04"><img src="image/38.gif"></img></div>
+				<div class="Down1" id="DT05">
+					<img src="image/39.jpg" style="width:49%;height:210px;"><img>
+					<img src="image/40.jpg" style="width:49%;height:210px;float:right;"><img>
+				</div>
+				<div class="Down1" id="Talk">
+					<li class="PL"><img src="image/44.png"/>评论</li>
+					<li class="PL"><img src="image/45.png"/>转发</li>
+					<li class="PL"><img src="image/46.png"/>赞</li>
+					<li class="PL"><img src="image/47.png"/>收藏</li>
+				</div>
+				<div class="Down1" id="ZF">
+				<img src="image/43.png" class="DZTU"></img>
+				<img src="image/41.jpg" class="DZTU"></img>
+				<img src="image/42.jpg" class="DZTU"></img>
+				</div>
+				<div class="Down1" id="TalkText">
+					<input type="text" id="SSPL"></input>
+					<img src="image/"></img>
+				</div>
+			</div>
+			<div class="Down1" id="DT2">
+				<div class="Down1" id="DT010"></div>
+				<div class="Down1" id="DT02">秋明本</div>
+				<div class="Down1" id="DT03">昨天 22:35 来自OnePlus X <img></img>浏览(66)</div>
+				<div class="Down1" id="DT04">nice day</div>
+				<div class="Down1" id="DT05">
+					<img src="image/6.jpg" style="width:49%;height:210px;"><img>
+					<img src="image/c1.jpg" style="width:49%;height:210px;float:right;"><img>
+				</div>
+				<div class="Down1" id="Talk">
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="PL"><img src="image/44.png"/>评论</li></a>
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="PL"><img src="image/45.png"/>转发</li></a>
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="PL"><img src="image/46.png"/>赞</li></a>
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="PL"><img src="image/47.png"/>收藏</li></a>
+				</div>
+				<div class="Down1" id="ZF">
+				<img src="image/43.png" class="DZTU"></img>
+				<img src="image/58.jpg" class="DZTU"></img>
+				<img src="image/60.gif" class="DZTU"></img>
+				<img src="image/59.jpg" class="DZTU"></img>
+				</div>
+				<div class="Down1" id="TalkText">
+					<input type="text" id="SSPL"></input>
+				</div>
+			</div>
+		</div>
+	<!-- 下半页右 -->
+		<div class="Down1" id="DownRight">
+			<!-- 周 -->
+			<div class="Down1" id="DownRightTop">
+				<!-- 周左 -->
+				<div class="Down1" id="Week">
+					<div class="Down1" id="WeekTop">周一</div>
+					<div class="Down1" id="WeekDown">11.14</div>
+				</div>
+				<!-- 周中 -->
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="WeekCenter">签到</div></a>
+				<!-- 周右 -->
+				<div class="Down1" id="WeekRight1">21</div>
+				<div class="Down1" id="WeekRight2">Days</div>
+			</div>
+			<!-- 右侧广告 -->
+			<div class="Down1" id="GG"></div>
+			<!-- 谁看过我 -->
+			<div class="Down1" id="CareMe">
+				<div class="Down1" id="CareMe1">
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="Lookme">谁看过我&nbsp;|&nbsp;</li></a>
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="Lookme">我看过谁&nbsp;|&nbsp;</li></a>
+					<a class="lj" href="http://user.qzone.qq.com/759545502/main"><li class="Lookme">被档访客&nbsp;|&nbsp;</li></a>
+				</div>
+				<!-- 关注什么 -->
+			<div class="Down1" id="Care">看看大家都看了什么？开通黄钻<br>可查看300人的访问记录<br>
+				<a class="lj" href="http://user.qzone.qq.com/759545502/main"><div class="Down1" id="KTHZ">开通黄钻</div>
+			</div></a>
+			<!-- 看过我的人头像 -->
+			<div class="Down1" id="Lookman">
+				<div class="Down1" id="ManPhoto1">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">曹宇</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto2">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">阿花</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto3">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">樊雨霏</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManName">前天</div>
+				<div class="Down1" id="ManName">10月28日</div>
+				<div class="Down1" id="ManName">10月26日</div>
+
+				<div class="Down1" id="ManPhoto4">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">李孟涛</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto5">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">长孙桂强</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto6">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">凌晨</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManName">10月25日</div>
+				<div class="Down1" id="ManName">10月25日</div>
+				<div class="Down1" id="ManName">10月25日</div>
+
+				<div class="Down1" id="ManPhoto7">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">许秋霞</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto8">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">朱文静</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManPhoto9">
+					<a href="http://user.qzone.qq.com/759545502/main">
+						<div class="Down1" id="ManPhotoName">孙浩浩</div>
+					</a>
+				</div>
+				<div class="Down1" id="ManName">10月25日</div>
+				<div class="Down1" id="ManName">10月25日</div>
+				<div class="Down1" id="ManName">10月25日</div>
+			</div>	
+			</div>
+		</div>
+
+	<!-- 清除浮动 -->
+		<div style="clear:both;"></div>
+	<!-- 作者栏 -->
+		<div class="Down1" id="zz"></div>
+	</body>
+</html>

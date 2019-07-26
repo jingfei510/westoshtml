@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>>行业资讯</title>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/index2.css"/>
+</head>
+<body>
+<header>
+    <div class="header_left">
+        <img src="../images/logo.png" alt="西部开源技术中心"/>
+        <span>西部开源欢迎你！</span>
+    </div>
+    <div class="header_right">
+        <img src="../images/phone1.png" alt="电话"/>
+        <span>029-86699937&nbsp;&nbsp;88262419</span>
+    </div>
+</header>
+<div class="banner">
+    <ul class="banner_ul">
+        <li class="lilist1"><a href="../index.html">首页</a><span></span></li>
+        <li class="lilist"><a href="index2.html">课程中心</a><span></span>
+            <ul class="lilist_ul">
+                <li><a href="index2java.html">Java</a></li>
+                <li><a href="index2C.html">Linux&nbsp;C&C++</a></li>
+                <li><a href="index2linux.html">Linux</a></li>
+                <li><a href="index2.html">Web</a></li>
+            </ul>
+        </li>
+        <li class="lilist"><a href="index3.html">教育体系</a><span></span></li>
+        <li class="lilist"><a href="news.html">新闻资讯</a><span></span>
+            <ul class="lilist_ul lilist_ul1">
+                <li><a href="news.html">行业资讯</a></li>
+                <li><a href="news1.html">就业咨询</a></li>
+                <li><a href="news2.html">学生动态</a></li>
+            </ul>
+        </li>
+        <li class="lilist"><a href="xuexiziyuan.html">学习资源</a><span  class="show"></span></li>
+        <li class="lilist"><a href="linux01.html">Linux企业化</a><span class="span_last"></span>
+            <ul class="lilist_ul lilist_ul1 ul_width">
+                <li><a href="linux01.html">Linux企业化</a></li>
+                <li><a href="linux02.html">解决方案</a></li>
+                <li><a href="linux04.html">项目案例</a></li>
+            </ul>
+        </li>
+        <li class="lilist2"><input type="text" class="banner_txt" placeholder="搜索"/></li>
+    </ul>
+</div>
+<!--Linux企业化一-->
+<div class="bgli1-1">
+    <span class="fontcolor">您的位置 : </span><a href="news.html" class="bgli1-1_a">学习资源 </a>&gt; 技术文档
+
+    <h2 class="bgli1-1h2 maleft">基于Docker的CI/CD流水线实践</h2>
+    <span class="datayear">2017-9-1&nbsp;&nbsp;12:00&nbsp;&nbsp;西部开源</span><span class="look">浏览:2000人</span>
+    <div class="bgli1-1_div">
+        <br/><br/>
+        <p class="bgli_divp">随着DevOps理念不断的传播，大部分IT从业者对于DevOps本身也有了一定的了解和认识，然而企业内部想根据DevOps思想实践，这并不是一件很简单的事情。一方面由于企业内部的历史环境以及组织结构问题，另外一方面因为业界并没有一套标准的开源工具集可以借鉴（关于几家基于Docker创业的服务提供商暂时除外）。
+            <br/><br/>
+            那么该篇内容主要讲解如何借助开源工具结合CI/CD的场景，将Docker融入到部署单元中去，进行持续集成、测试到最终的持续部署，开发人员最终只需要去关注业务的访问入口就可以知道业务是否正常，并可以通过一系列的监控工具去及时发现业务异常。
+            <br/><br/>
+            在整个DevOps部署流水线中需要以下几个部分：CI部分、CD部分、服务调度（治理）部分、监控部分、日志部分。本篇文章将通过一个简单的go-web应用去进行基于Docker的CI/CD流水线的测试。
+        </p>
+        <span class="bgli_divspan">基于Docker的CI/CD的优势</span>
+        <p class="bgli_divp">一个完整的流程入上图所示，用户（也就是开发人员）将包含Dockerfile的源码从本地push到Git服务器上，然后触发Jenkins进行构建源码，源码构建完成后紧接着进行Docker image的构建，一切构建完成之后，顺带将构建成功的image上传到企业内部的镜像仓库，到此刻为止，其实一个基本的CI（持续集成）已经算是结束，剩下的部分就是持续部署或者进行持续的交付开发产物了。
+            <br/><br/>
+            在以前传统的软件发布模式中，持续集成的产物是编译打包好的代码，如果想要发布程序，发布系统需要在持续集成的制品库中去获得对应的代码，然后根据一系列的环境检查来准备应用的运行时环境，而在此过程中往往会涉及到比较多的基本组件依赖，所以在整体的发布周期内来看，还是有一些问题的。
+            <br/><br/>
+            在Docker或者容器时代，我们将容器的镜像构建部分融入到持续集成（CI）环节，最终持续集成的产出物是一些已经处理好依赖关系，基本不需要人工进行二次干预的Docker image，而在CD环节，发布系统只需要设置和管理很少的信息就能够很快将image运行起来，快速地将业务发布出去。
+            <br/><br/>
+            在上面整个环节中，其实无非就是增加了Docker的那一层处理，但其实在整个软件开发的生命周期中，它是产生了极大的影响的。
+            <br/><br/>
+            首先，部署系统不需要为统一的部署框架去做更多逻辑抽象，业务研发在开发代码的过程中选择自己依赖的base image即可，最终运行起来的业务也就是你当时提供的base image的模样；<br/>其次，由于base image已经处理好了相关的依赖，所以当发布系统拿到业务的image的时候，发布操作将会变得异常迅速，这对于互联网时代可谓是非常重要的；<br/>最后一点，也是我感受最深的，就是研发构建好的image可以在任何的Docker环境中run起来，研发人员不需要再关系环境一致性的问题，他们在自己本地的测试环境能够运行起来的应用，那么到生成环境也一定可以。
+            <br/><br/>
+            为什么第三点我感触比较深呢？因为以前经常有研发兄弟跑过来跟我们讲，我们代码在本地运行一切顺利，代码给你们上到生产就各种问题。所以如果在整个流程中使用Docker image来讲所有的环境固化，从此mm就再也不用担心和研发兄弟扯皮环境不一致的问题啦。
+        </p>
+        <span class="bgli_divspan">基于Docker的CI/CD的开源方案实现</span>
+        <p class="bgli_divp">一、自助式Git管理工具Gogs的部署安装 <br/>
+            Gogs部署 <br/><br/>
+            Gogs部署在10.0.0.1主机上，映射到宿主机端口为32770
+            <img src="../images/Gogs.png" class="Gogs"/>
+            <img src="../images/Go.png" class="Gogs"/>
+        </p>
+        <p class="bgli_divp"> <br/>
+            MySQL建库授权<br/><br/>
+            MySQL部署在10.0.0.2上，映射到宿主机端口为32771
+            <img src="../images/MyS.png" class="Gogs"/>
+        </p>
+        <p class="bgli_divp"> <br/>
+        配置Gogs<br/><br/>
+        上面两步没有问题之后就可以直接访问:ip:32770 （也就是Gogs暴露的端口）进行相关的配置。<br/>
+        配置完成后进行初始化，并创建管理员用户后就可正常使用。
+    </p><br/><br/>
+        <p class="bgli_divp">二、Jenkins持续集成工具部署安装<br/>
+            Jenkins部署<br/><br/>
+            Jenkins在官方的image基础上增加了go 1.7的编译环境，部署在10.0.0.2上，映射到宿主机端口32791。
+            <img src="../images/Je.png" class="Gogs"/>
+            <b>注意：</b>需要将Jenkins相关数据以及编译环境映射到Docker宿主机上，因为后期编译完成后Jenkins容器需要docker build构建业务image。
+            <br/><br/>
+            Jenkins容器运行起来之后，就可以直接访问10.0.0.2:32791进行初始化安装配置了。<br/><br/>
+            在Web上面访问Jenkins地址进行初始化配置，需要写入ID进行解锁Jenkins（Web上会提示在哪个路径下存放，直接使用docker logs也可查看）；解锁后就是正常的安装相关的Plugins了，只要网络没有问题，一般都正常通过。
+            <br/><br/>
+            创建Jenkins项目，并配置构建脚本（也可通过相应的Plugins进行配置）。
+            <br/><br/>
+            创建一个新的名为test的项目，配置相关的源码管理以及构建条件以及相关的后续操作。
+        </p>
+        <p class="bgli_divp"> <br/>
+            配置Jenkins环境<br/><br/>
+            注意：由上图可以看出来，Jenkins进行构建image和持续部署测试的过程都是通过SSH到远端去执行的，因此需要再Jenkins容器中生成SSH公私钥对，并和Jenkins的宿主机以及持续部署测试的宿主机进行免密认证。虽然Jenkins本身其实支持了很多种Plugin来支持管理Docker的，比如说Docker build step plugin、Docker Build Publish Plugin，但是由于过多的Plugin会造成实际环境中的维护成本大大增加，因此我们选择简单粗暴的脚本方式，上图中的Execute shell只是简单的示例。
+            <img src="../images/Je1.png" class="Gogs"/>
+            生成公私钥对之后，将公钥传给要远程部署的机器就OK了，目的是要让Jenkins容器能够免密登录远程服务器，并能执行sudo命令。
+        </p><br/><br/>
+        <p class="bgli_divp">三、通过配置Nginx反向代理来访问Git，Jenkins以及测试实例<br/>
+            反向代理Nginx部署在10.0.0.4:80上。<br/><br/>
+            配置Nginx<br/><br/>
+            <b>注意：</b>centos6.8-jdjr-test-app:v2镜像默认是包含Nginx以及配置管理工具的。<br/>
+            <img src="../images/Ng.png" class="Gogs"/>
+            测试访问
+            <br/><br/>
+            在本地绑定hosts <br/><br/>
+            访问mygit.biao.com上面的源码 <br/><br/>
+            访问jenkins.biao.com上的构建任务<br/><br/>
+            注意：test项目在之前我们已经配置好了，所以可以直接触发构建部署。<br/><br/>
+            访问web.biao.com服务<br/><br/>
+            持续集成持续部署的效果<br/><br/>
+            更新源码中的部分内容，进行重新构建访问。
+            <br/><br/>
+            在Jenkins上进行再次构建
+            <br/><br/>
+            再次访问web.biao.com服务：<br/><br/>
+            对比前后两个Web，发现不仅欢迎语由“biaoge”变成了“逼格运维说”，而且第二行的字符串由4e7853008397变为0ce402beclle，也就是是之前的那个Container已经被销毁，我们现在访问的web.biao.com是重新编译后运行在新的container里面的实例。
+        </p>
+
+        <p class="bgli_divp"><span class="text_cen">总结</span></p>
+        <p class="bgli_divp">  至此，整个基于Docker的CI/CD流水线的流程基本完成，其实可以看到对于研发兄弟来说，每次的提交代码都会触发一次编译构建，并且最终会run起来一个新的Container，并且直接对外服务。当然在整个过程中对于集成、发布部分演示的都比较粗浅，这里只做一个引子，对于企业内部一整套的流程体系来说，光有持续集成和持续部署也是远远不够的，服务上线后的基础监控以及业务的日志监控还有整个业务调度都是需要进行协同考虑的（在容器云平台的构建中CI/CD只是最基本的流程，想要做好整个平台，还需要监控、日志以及调度方面的能力才能做到麻雀虽小，而五脏俱全）。
+            <br/> <br/>
+            在Docker理念大行其道的今天，我个人认为我们需要更深层次的去考虑实际场景中它带给我们的优势和劣势，并且要思考如何与当前整体系统架构以及运维研发架构进行衔接，如何去为配合研发去做敏捷开发以及持续的交付，为企业产生更大的效能。
+            <br/> <br/>
+            本篇文章为前一个月实践所得，今天重新编辑整理，如有部分章节读者有疑问可以随时勾搭作者。希望有共同爱好者一起交流关于Docker方面的东西。
+        </p>
+
+        <a class="disabled">上一页</a>
+        <a href="jishu_2.html" class="textright">下一页</a>
+    </div>
+
+</div>
+<!--footer-->
+<footer>
+    <div class="footer_div">
+        <ul class="footer_ulleft footer_ulleft1">
+            <li><span class="li_span">课程详解</span></li>
+            <li><a class="footer_a" href="index2C.html#hear">Linux&nbsp;C&C++</a></li>
+            <li><a class="footer_a" href="index2.html#hear">Web前端</a></li>
+            <li><a class="footer_a" href="index2java.html#hear">Java</a></li>
+            <li><a class="footer_a" href="index2linux.html#hear">系统运维</a></li>
+        </ul>
+        <ul class="footer_ulleft">
+            <li><span class="li_span">学习资源</span></li>
+            <li><a class="footer_a" href="jishu_1.html">技术文档</a></li>
+            <li><a class="footer_a" href="">问答库</a></li>
+        </ul>
+        <ul class="footer_ulleft">
+            <li><span class="li_span">关于我们</span></li>
+            <li><a class="footer_a" href="Company%20profile1.html">公司简介</a></li>
+            <li><a class="footer_a" href="join.html">招贤纳士</a></li>
+            <li><a class="footer_a" href="linux01.html">Linux企业化</a></li>
+        </ul>
+        <img src="../images/gongsi1.png" class="footer_erweima" alt="微信二维码"/>
+        <span class="foot_span">企业公众号</span>
+    </div>
+    <div class="footer_div1 clear">
+        <span class="footer_div1_span">友情链接:</span><a href="https://www.redhat.com/zh">https://www.redhat.com/zh&nbsp;&nbsp;&nbsp;红帽 </a>
+        <a class="footer_div1a" href="http://www.cjjjs.com/">http://www.cjjjs.com/  C++技术网</a>
+        <a class="footer_div1a" href="http://www.cctry.com/">http://www.cctry.com/  VC驿站</a><br/>
+        <a class="footer_div1a margin_left" href="http://www.pronginn.com/yunwei/">http://www.pronginn.com/yunwei/  程序员客栈</a>
+        <a class="footer_div1a" href="http://www.unixhot.com/">http://www.unixhot.com/  运维社区</a>
+        <p>西安源代码技术服务有限公司</p>
+        <p>地址：西安市太白南路181号西高新西部电子社区A座C区506室<span class="p_span">电话：029-86699937&nbsp;&nbsp;&nbsp;029-88262419</span></p>
+        <span class="foot_span1">版权所有：西安源代码软件技术有限公司&nbsp;&nbsp;陕ICP备07011438</span>
+    </div>
+</footer>
+</body>
+</html>

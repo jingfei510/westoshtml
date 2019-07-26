@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: #5F9EA0;
+				width: 1500px;
+				height: 750px;
+				
+			}
+
+			#wai {
+				display: flex;
+				justify-content: center;
+			}
+
+			#tu1 {
+				margin-top: 50px;
+				width: 960px;
+				height: 600px;
+				border: white 10px solid;
+				border-bottom-width: 15px;
+			}
+
+			#tu2 {
+				position: absolute;
+				left: 0px;
+				top: 60px;
+				animation-name: java1;
+				animation-play-state: running;
+				animation-duration: 6s;
+				animation-direction: reverse;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+
+
+
+			}
+
+			#tu3 {
+				position: absolute;
+				right: 0px;
+				top: 60px;
+				animation-name: java2;
+				animation-play-state: running;
+				animation-iteration-count: infinite;
+				animation-duration: 6s;
+				animation-timing-function: linear;
+				animation-direction: reverse;
+
+			}
+
+
+
+			@keyframes java1 {
+				1% {
+					top: 60px;
+				}
+
+				50% {
+					top: 450px;
+				}
+
+				100% {
+					top: 60px;
+				}
+
+
+			}
+
+			@keyframes java2 {
+
+				1% {
+					top: 60px;
+				}
+
+				50% {
+					top: 450px;
+				}
+
+				100% {
+					top: 60px;
+				}
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wai">
+			<div id="tu1">
+				<img src="img/j1.jpg">
+
+			</div>
+
+		</div>
+		<div id="tu2">
+			<img width="200px" height="200px" src="img/j2.jpeg">
+		</div>
+		<div id="tu3">
+			<img width="200px" height="200px" src="img/j2.jpeg">
+		</div>
+
+	</body>
+</html>
